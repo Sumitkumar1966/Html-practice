@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        .container{
+    border:2px solid gold;
+    display: flex;
+    justify-content:center;
+    gap: 20%;
+    padding: 30px;
+}
+nav{
+    border:2px solid rgb(255, 255, 255);
+    padding-right: 100px;
+
+}
+.left-menu{
+display: flex;
+justify-content: left;
+gap: 10%;
+font-size: 30px;
+}
+#para{
+    font-size: 50px;
+    /* margin-left: 100px;
+    margin-right: 10px; */
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    size:50px;
+}
+.right-menu{
+    border: 2px solid rgb(253, 252, 252);
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    font-size: 30px;
+}
+#hh{
+    border-radius: 80px;
+}
+    </style>
+</head>
+<body>
+<header class="container">
+    <nav class="nav">
+
+        <div class="left-menu">
+            <a href="#">Home</a>
+            <a href="#">Collection</a>
+            <a href="#">Cart</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    <div>
+        <a id="para" href="#">🛋️</a>
+    </div>
+
+        
+
+        <div class="right-menu">
+            <a href="#">Shops</a>
+            <a href="#">Account</a>
+
+            <div class="search">🔍</div>
+
+            <div class="profile">
+                <img id="hh" src="image.png" width="80px" alt="Profile">
+            </div>
+        </div>
+
+    </nav></header>
+
+
+</body>
+</html>
