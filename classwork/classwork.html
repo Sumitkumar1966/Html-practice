@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Bliss</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f0;
+    color:#3e2723;
+}
+
+/* BUTTON */
+.btn{
+    background:#6f4e37;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#3e2723;
+    transform:translateY(-3px);
+}
+
+/* INPUT */
+input,textarea{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+/* LOGIN / SIGNUP */
+.auth{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6f4e37,#c49a6c);
+}
+
+.box{
+    background:white;
+    width:380px;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 30px #0003;
+}
+
+.box h1{
+    margin-bottom:10px;
+}
+
+.box .btn{
+    width:100%;
+    margin:10px 0;
+}
+
+.box a{
+    color:#6f4e37;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* NAVBAR */
+nav{
+    background:#3e2723;
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav h2{
+    color:#f5d7b2;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#f5d7b2;
+}
+
+/* HERO */
+.hero{
+    height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(#3e272399,#3e272399),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+/* SECTIONS */
+section{
+    padding:70px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px #0002;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px #0003;
+}
+
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.content{
+    padding:20px;
+}
+
+.content h3{
+    margin-bottom:8px;
+}
+
+.price{
+    color:#6f4e37;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+/* ABOUT */
+.about{
+    background:#ead7c3;
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* CATEGORY */
+.categories{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.category{
+    padding:10px 22px;
+    margin:5px;
+    border:2px solid #6f4e37;
+    background:white;
+    color:#6f4e37;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.category:hover,
+.category.active{
+    background:#6f4e37;
+    color:white;
+}
+
+.food{
+    display:none;
+}
+
+.food.show{
+    display:block;
+}
+
+/* CONTACT */
+.contact{
+    background:#3e2723;
+    color:white;
+    text-align:center;
+}
+
+.contact input,
+.contact textarea{
+    max-width:700px;
+}
+
+footer{
+    background:#211512;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<div id="loginPage" class="auth">
+
+<div class="box">
+
+<h1>☕ Coffee Bliss</h1>
+
+<p>Login to continue</p>
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button class="btn" onclick="login()">Login</button>
+
+<p>
+<a onclick="forgot()">Forgot Password?</a>
+</p>
+
+<p>
+Don't have an account?
+<a onclick="signupPage()">Create Account</a>
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= SIGN UP PAGE ================= -->
+
+<div id="signupPage" class="auth" style="display:none">
+
+<div class="box">
+
+<h1>Create Account</h1>
+
+<p>Join Coffee Bliss</p>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<input type="password" placeholder="Confirm Password">
+
+<p>
+<input type="checkbox" id="terms" style="width:auto">
+I agree to Terms & Conditions
+</p>
+
+<button class="btn" onclick="signup()">Sign Up</button>
+
+<p>
+Already have an account?
+<a onclick="loginPage()">Login</a>
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<div id="website" style="display:none">
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>☕ Coffee Bliss</h2>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#menu">Coffee</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#restaurant">Restaurant</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<div>
+
+<h1>Fresh Coffee, Happy Moments</h1>
+
+<p>
+Enjoy freshly brewed coffee and delicious food
+with your friends and family.
+</p>
+
+<a href="#menu">
+<button class="btn">Explore Menu</button>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- COFFEE MENU -->
+
+<section id="menu">
+
+<h2 class="title">Our Coffee Menu</h2>
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Cappuccino</h3>
+
+<p>Rich espresso with creamy milk foam.</p>
+
+<div class="price">₹180</div>
+
+<button class="btn">Order Now</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Latte</h3>
+
+<p>Smooth espresso with steamed milk.</p>
+
+<div class="price">₹160</div>
+
+<button class="btn">Order Now</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Mocha</h3>
+
+<p>Chocolate, espresso and creamy milk.</p>
+
+<div class="price">₹200</div>
+
+<button class="btn">Order Now</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Cold Coffee</h3>
+
+<p>Refreshing chilled coffee with ice.</p>
+
+<div class="price">₹150</div>
+
+<button class="btn">Order Now</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<h2 class="title">About Coffee Bliss</h2>
+
+<p>
+Coffee Bliss is a cozy coffee shop where you can enjoy
+freshly brewed coffee, tasty food and relaxing moments.
+Our goal is to provide great taste and a comfortable
+place for everyone.
+</p>
+
+</section>
+
+
+<!-- RESTAURANT -->
+
+<section id="restaurant">
+
+<h2 class="title">Restaurant Menu</h2>
+
+
+<div class="categories">
+
+<button class="category active"
+onclick="showFood('pizza',this)">
+Pizza
+</button>
+
+<button class="category"
+onclick="showFood('burger',this)">
+Burger
+</button>
+
+<button class="category"
+onclick="showFood('drinks',this)">
+Drinks
+</button>
+
+<button class="category"
+onclick="showFood('dessert',this)">
+Dessert
+</button>
+
+</div>
+
+
+<div class="cards">
+
+
+<!-- PIZZA -->
+
+<div class="card food pizza show">
+
+<img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Margherita Pizza</h3>
+
+<p>Classic cheese and tomato pizza.</p>
+
+<div class="price">₹250</div>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+
+<!-- BURGER -->
+
+<div class="card food burger">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Classic Burger</h3>
+
+<p>Juicy burger with fresh vegetables.</p>
+
+<div class="price">₹220</div>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+
+<!-- DRINK -->
+
+<div class="card food drinks">
+
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Fresh Juice</h3>
+
+<p>Freshly prepared fruit juice.</p>
+
+<div class="price">₹120</div>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+
+<!-- DESSERT -->
+
+<div class="card food dessert">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80">
+
+<div class="content">
+
+<h3>Chocolate Cake</h3>
+
+<p>Soft and delicious chocolate cake.</p>
+
+<div class="price">₹180</div>
+
+<button class="btn">Add to Cart</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<p>Email: coffeebliss@example.com</p>
+
+<p>Phone: +91 98765 43210</p>
+
+<p>Address: Ahmedabad, Gujarat</p>
+
+<br>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea placeholder="Your Message"></textarea>
+
+<br>
+
+<button class="btn" onclick="message()">
+Send Message
+</button>
+
+</section>
+
+
+<footer>
+
+© 2026 Coffee Bliss
+
+</footer>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function login(){
+
+let email=document.getElementById("email").value;
+
+let password=document.getElementById("password").value;
+
+if(email==="" || password===""){
+
+alert("Please enter email and password");
+
+return;
+
+}
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("website").style.display="block";
+
+window.scrollTo(0,0);
+
+}
+
+
+function signupPage(){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("signupPage").style.display="flex";
+
+}
+
+
+function loginPage(){
+
+document.getElementById("signupPage").style.display="none";
+
+document.getElementById("loginPage").style.display="flex";
+
+}
+
+
+function signup(){
+
+let terms=document.getElementById("terms");
+
+if(!terms.checked){
+
+alert("Please accept Terms & Conditions");
+
+return;
+
+}
+
+alert("Account created successfully!");
+
+loginPage();
+
+}
+
+
+function forgot(){
+
+let email=prompt("Enter your email:");
+
+if(email){
+
+alert("Password reset link sent to "+email);
+
+}
+
+}
+
+
+function showFood(category,button){
+
+let foods=document.querySelectorAll(".food");
+
+foods.forEach(function(food){
+
+food.classList.remove("show");
+
+if(food.classList.contains(category)){
+
+food.classList.add("show");
+
+}
+
+});
+
+
+let buttons=document.querySelectorAll(".category");
+
+buttons.forEach(function(btn){
+
+btn.classList.remove("active");
+
+});
+
+button.classList.add("active");
+
+}
+
+
+function message(){
+
+alert("Thank you! Your message has been sent.");
+
+}
+
+</script>
+
+</body>
+</html>
