@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | Balances</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">💳 SplitEasy</a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="groups.html">Groups</a>
+        <a class="active" href="balances.html">Balances</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+        <span class="avatar">S</span>
+        Sumit
+    </a>
+
+</header>
+
+
+<main class="dashboard">
+
+    <div class="page-header">
+
+        <div>
+            <span class="badge">BALANCES</span>
+            <h1>Who Owes Whom?</h1>
+            <p>Everything you need to settle your expenses.</p>
+        </div>
+
+    </div>
+
+
+    <div class="balance-summary">
+
+        <div class="big-balance-card red-card">
+            <span>↗</span>
+            <small>Total you owe</small>
+            <h2>₹1,250</h2>
+            <p>Across 3 people</p>
+        </div>
+
+        <div class="big-balance-card green-card">
+            <span>↙</span>
+            <small>Total you're owed</small>
+            <h2>₹2,800</h2>
+            <p>Across 4 people</p>
+        </div>
+
+        <div class="big-balance-card">
+            <span>✓</span>
+            <small>Net balance</small>
+            <h2 class="positive">+₹1,550</h2>
+            <p>You're owed more than you owe</p>
+        </div>
+
+    </div>
+
+
+    <section class="panel">
+
+        <div class="panel-title">
+
+            <div>
+                <h2>Settlement Relationships</h2>
+                <p>Simple view of who needs to pay whom.</p>
+            </div>
+
+        </div>
+
+
+        <div class="settlement-list">
+
+            <div class="settlement-card">
+
+                <div class="settlement-person">
+                    <span class="avatar blue">A</span>
+
+                    <div>
+                        <small>Pays</small>
+                        <h3>Ayush</h3>
+                    </div>
+                </div>
+
+                <div class="settlement-arrow">
+                    <span>→</span>
+                    <b>₹450</b>
+                </div>
+
+                <div class="settlement-person">
+                    <span class="avatar orange">S</span>
+
+                    <div>
+                        <small>Receives</small>
+                        <h3>Sumit</h3>
+                    </div>
+                </div>
+
+                <button
+                    class="btn primary"
+                    onclick="settle('Ayush',450)">
+                    Settle
+                </button>
+
+            </div>
+
+
+            <div class="settlement-card">
+
+                <div class="settlement-person">
+                    <span class="avatar green">A</span>
+
+                    <div>
+                        <small>Pays</small>
+                        <h3>Abhishek</h3>
+                    </div>
+                </div>
+
+                <div class="settlement-arrow">
+                    <span>→</span>
+                    <b>₹350</b>
+                </div>
+
+                <div class="settlement-person">
+                    <span class="avatar orange">S</span>
+
+                    <div>
+                        <small>Receives</small>
+                        <h3>Sumit</h3>
+                    </div>
+                </div>
+
+                <button
+                    class="btn primary"
+                    onclick="settle('Abhishek',350)">
+                    Settle
+                </button>
+
+            </div>
+
+
+            <div class="settlement-card">
+
+                <div class="settlement-person">
+                    <span class="avatar dark">K</span>
+
+                    <div>
+                        <small>Pays</small>
+                        <h3>Karan</h3>
+                    </div>
+                </div>
+
+                <div class="settlement-arrow">
+                    <span>→</span>
+                    <b>₹200</b>
+                </div>
+
+                <div class="settlement-person">
+                    <span class="avatar purple">D</span>
+
+                    <div>
+                        <small>Receives</small>
+                        <h3>Diya</h3>
+                    </div>
+                </div>
+
+                <button
+                    class="btn primary"
+                    onclick="settle('Karan',200)">
+                    Settle
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

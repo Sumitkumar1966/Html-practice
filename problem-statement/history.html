@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">💳 SplitEasy</a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="groups.html">Groups</a>
+        <a href="balances.html">Balances</a>
+        <a class="active" href="history.html">History</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+        <span class="avatar">S</span>
+        Sumit
+    </a>
+
+</header>
+
+
+<main class="dashboard">
+
+    <div class="page-header">
+
+        <div>
+            <span class="badge">HISTORY</span>
+            <h1>Expense History</h1>
+            <p>Every payment, all in one place.</p>
+        </div>
+
+        <a href="add-expense.html" class="btn primary">
+            + Add Expense
+        </a>
+
+    </div>
+
+
+    <section class="panel">
+
+        <div class="search-filter">
+
+            <div class="search-box">
+                🔍
+                <input
+                    id="searchInput"
+                    onkeyup="searchExpenses()"
+                    placeholder="Search expenses..."
+                >
+            </div>
+
+            <select>
+                <option>All Groups</option>
+                <option>Goa Trip</option>
+                <option>Flatmates</option>
+                <option>College Friends</option>
+            </select>
+
+            <select>
+                <option>All Categories</option>
+                <option>Food</option>
+                <option>Travel</option>
+                <option>Hotel</option>
+            </select>
+
+        </div>
+
+
+        <div class="expense-table history-table">
+
+            <div class="expense-row expense-heading">
+                <span>Expense</span>
+                <span>Group</span>
+                <span>Paid By</span>
+                <span>Amount</span>
+                <span>Date</span>
+                <span>Status</span>
+            </div>
+
+
+            <div class="expense-row searchable">
+                <span>🍽️ Dinner</span>
+                <span>Goa Trip</span>
+                <span>Sumit</span>
+                <b>₹2,400</b>
+                <span>Oct 5</span>
+                <span class="tag settled">Settled</span>
+            </div>
+
+
+            <div class="expense-row searchable">
+                <span>🏨 Hotel</span>
+                <span>Goa Trip</span>
+                <span>Ayush</span>
+                <b>₹4,800</b>
+                <span>Oct 4</span>
+                <span class="tag pending">Pending</span>
+            </div>
+
+
+            <div class="expense-row searchable">
+                <span>🚕 Cab</span>
+                <span>Goa Trip</span>
+                <span>Diya</span>
+                <b>₹650</b>
+                <span>Oct 3</span>
+                <span class="tag settled">Settled</span>
+            </div>
+
+
+            <div class="expense-row searchable">
+                <span>🛒 Groceries</span>
+                <span>Flatmates</span>
+                <span>Abhishek</span>
+                <b>₹1,200</b>
+                <span>Oct 2</span>
+                <span class="tag pending">Pending</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

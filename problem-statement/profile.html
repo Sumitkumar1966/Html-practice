@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">💳 SplitEasy</a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="groups.html">Groups</a>
+        <a href="balances.html">Balances</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+        <span class="avatar">S</span>
+        Sumit
+    </a>
+
+</header>
+
+
+<main class="profile-page">
+
+    <div class="profile-card">
+
+        <div class="profile-cover"></div>
+
+        <div class="profile-content">
+
+            <div class="profile-avatar">
+                S
+            </div>
+
+            <span class="badge">HACKATHON DEMO ACCOUNT</span>
+
+            <h1>Sumit Kumar</h1>
+
+            <p>sumit@example.com</p>
+
+
+            <div class="profile-form">
+
+                <div>
+                    <label>Full Name</label>
+                    <input value="Sumit Kumar">
+                </div>
+
+                <div>
+                    <label>Email</label>
+                    <input value="sumit@example.com">
+                </div>
+
+                <div>
+                    <label>Phone</label>
+                    <input value="+91 98765 43210">
+                </div>
+
+                <div>
+                    <label>Currency</label>
+                    <select>
+                        <option>₹ INR - Indian Rupee</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Default Split Method</label>
+                    <select>
+                        <option>Equal Split</option>
+                        <option>Exact Amount</option>
+                        <option>Percentage</option>
+                        <option>Shares</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="profile-actions">
+
+                <button class="btn primary"
+                        onclick="saveProfile()">
+                    Save Changes
+                </button>
+
+                <button class="btn secondary">
+                    Change Password
+                </button>
+
+                <button class="btn danger"
+                        onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

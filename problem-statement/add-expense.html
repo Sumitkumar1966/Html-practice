@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | Add Expense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">💳 SplitEasy</a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="groups.html">Groups</a>
+        <a href="balances.html">Balances</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+        <span class="avatar">S</span>
+        Sumit
+    </a>
+
+</header>
+
+
+<main class="form-page">
+
+    <div class="form-container">
+
+        <div class="form-heading">
+            <span class="badge">NEW EXPENSE</span>
+
+            <h1>Add Expense</h1>
+
+            <p>
+                Add an expense and SplitEasy will calculate everyone's share.
+            </p>
+        </div>
+
+
+        <div class="form-card">
+
+            <label>Expense Name</label>
+
+            <input
+                id="expenseName"
+                type="text"
+                placeholder="e.g. Dinner"
+            >
+
+
+            <label>Amount</label>
+
+            <div class="amount-input">
+                <span>₹</span>
+
+                <input
+                    id="expenseAmount"
+                    type="number"
+                    value="2400"
+                    oninput="calculateSplit()"
+                >
+            </div>
+
+
+            <label>Paid By</label>
+
+            <select id="paidBy">
+                <option>Sumit</option>
+                <option>Ayush</option>
+                <option>Diya</option>
+                <option>Abhishek</option>
+            </select>
+
+
+            <label>Category</label>
+
+            <div class="category-buttons">
+
+                <button class="category active-category">🍔 Food</button>
+                <button class="category">🚕 Travel</button>
+                <button class="category">🏨 Hotel</button>
+                <button class="category">🛍️ Shopping</button>
+                <button class="category">🛒 Groceries</button>
+                <button class="category">🎮 Entertainment</button>
+
+            </div>
+
+
+            <label>Split Method</label>
+
+            <div class="split-options">
+
+                <button class="split-option active-split"
+                        onclick="selectSplit(this)">
+                    Equal
+                </button>
+
+                <button class="split-option"
+                        onclick="selectSplit(this)">
+                    Exact Amount
+                </button>
+
+                <button class="split-option"
+                        onclick="selectSplit(this)">
+                    Percentage
+                </button>
+
+                <button class="split-option"
+                        onclick="selectSplit(this)">
+                    Shares
+                </button>
+
+            </div>
+
+
+            <label>Split Between</label>
+
+            <div class="member-checkboxes">
+
+                <label>
+                    <input type="checkbox" checked onchange="calculateSplit()">
+                    Sumit
+                </label>
+
+                <label>
+                    <input type="checkbox" checked onchange="calculateSplit()">
+                    Ayush
+                </label>
+
+                <label>
+                    <input type="checkbox" checked onchange="calculateSplit()">
+                    Diya
+                </label>
+
+                <label>
+                    <input type="checkbox" checked onchange="calculateSplit()">
+                    Abhishek
+                </label>
+
+            </div>
+
+
+            <label>Date</label>
+
+            <input type="date" value="2026-10-05">
+
+
+            <label>Notes</label>
+
+            <textarea placeholder="Add an optional note..."></textarea>
+
+
+            <div class="calculation">
+
+                <div class="calculation-heading">
+                    <div>
+                        <small>LIVE CALCULATION</small>
+                        <h3>Each person's share</h3>
+                    </div>
+
+                    <span class="success">Equal Split</span>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Sumit</span>
+                    <b id="sumitShare">₹600</b>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Ayush</span>
+                    <b id="ayushShare">₹600</b>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Diya</span>
+                    <b id="diyaShare">₹600</b>
+                </div>
+
+                <div class="calculation-row">
+                    <span>Abhishek</span>
+                    <b id="abhishekShare">₹600</b>
+                </div>
+
+            </div>
+
+
+            <button class="btn primary full"
+                    onclick="addExpense()">
+                Add Expense ✓
+            </button>
+
+            <a href="dashboard.html" class="cancel-link">
+                Cancel
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

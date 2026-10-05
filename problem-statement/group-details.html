@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | Goa Trip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">💳 SplitEasy</a>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="groups.html">Groups</a>
+        <a href="balances.html">Balances</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+        <span class="avatar">S</span>
+        Sumit
+    </a>
+
+</header>
+
+
+<main class="dashboard">
+
+    <a href="groups.html" class="back">← Back to Groups</a>
+
+    <div class="group-header">
+
+        <div>
+            <span class="large-group-icon">🏖️</span>
+
+            <span class="badge">ACTIVE GROUP</span>
+
+            <h1>Goa Trip</h1>
+
+            <p>Weekend trip with Sumit, Ayush, Diya & friends</p>
+
+            <div class="header-stats">
+                <span>👥 6 members</span>
+                <span>💰 ₹18,450 total spent</span>
+            </div>
+        </div>
+
+        <div class="header-buttons">
+            <a href="add-expense.html" class="btn primary">+ Add Expense</a>
+            <a href="balances.html" class="btn secondary">Settle Up</a>
+        </div>
+
+    </div>
+
+
+    <div class="members-grid">
+
+        <div class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <h2>Members</h2>
+                    <p>Current group balances</p>
+                </div>
+
+                <button class="btn secondary">+ Invite</button>
+            </div>
+
+
+            <div class="member-row">
+                <span class="avatar orange">S</span>
+                <div>
+                    <b>Sumit</b>
+                    <small>You</small>
+                </div>
+                <strong class="positive">Gets ₹1,200</strong>
+            </div>
+
+            <div class="member-row">
+                <span class="avatar blue">A</span>
+                <div>
+                    <b>Ayush</b>
+                    <small>Member</small>
+                </div>
+                <strong class="negative">Owes ₹450</strong>
+            </div>
+
+            <div class="member-row">
+                <span class="avatar purple">D</span>
+                <div>
+                    <b>Diya</b>
+                    <small>Member</small>
+                </div>
+                <strong class="settled">Settled</strong>
+            </div>
+
+            <div class="member-row">
+                <span class="avatar green">A</span>
+                <div>
+                    <b>Abhishek</b>
+                    <small>Member</small>
+                </div>
+                <strong class="negative">Owes ₹350</strong>
+            </div>
+
+            <div class="member-row">
+                <span class="avatar pink">N</span>
+                <div>
+                    <b>Neha</b>
+                    <small>Member</small>
+                </div>
+                <strong class="settled">Settled</strong>
+            </div>
+
+            <div class="member-row">
+                <span class="avatar dark">K</span>
+                <div>
+                    <b>Karan</b>
+                    <small>Member</small>
+                </div>
+                <strong class="positive">Gets ₹200</strong>
+            </div>
+
+        </div>
+
+
+        <div class="panel owes-panel">
+
+            <div class="panel-title">
+                <div>
+                    <h2>Who owes whom?</h2>
+                    <p>Clear settlement relationships</p>
+                </div>
+            </div>
+
+            <div class="owe-card">
+                <div class="person-small">
+                    <span class="avatar blue">A</span>
+                    <b>Ayush</b>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="person-small">
+                    <span class="avatar orange">S</span>
+                    <b>Sumit</b>
+                </div>
+
+                <strong>₹450</strong>
+            </div>
+
+            <div class="owe-card">
+                <div class="person-small">
+                    <span class="avatar green">A</span>
+                    <b>Abhishek</b>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="person-small">
+                    <span class="avatar orange">S</span>
+                    <b>Sumit</b>
+                </div>
+
+                <strong>₹350</strong>
+            </div>
+
+            <div class="owe-card">
+                <div class="person-small">
+                    <span class="avatar dark">K</span>
+                    <b>Karan</b>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="person-small">
+                    <span class="avatar purple">D</span>
+                    <b>Diya</b>
+                </div>
+
+                <strong>₹200</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <div>
+                <h2>Group Expenses</h2>
+                <p>All expenses from this trip</p>
+            </div>
+
+            <a href="add-expense.html" class="btn primary">+ Add Expense</a>
+        </div>
+
+        <div class="expense-table">
+
+            <div class="expense-row expense-heading">
+                <span>Expense</span>
+                <span>Paid By</span>
+                <span>Amount</span>
+                <span>Date</span>
+                <span>Status</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🏨 Hotel Booking</span>
+                <span>Sumit</span>
+                <b>₹4,800</b>
+                <span>Oct 4</span>
+                <span class="tag pending">Pending</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🍽️ Dinner</span>
+                <span>Sumit</span>
+                <b>₹2,400</b>
+                <span>Oct 5</span>
+                <span class="tag settled">Settled</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🚕 Cab</span>
+                <span>Diya</span>
+                <b>₹650</b>
+                <span>Oct 3</span>
+                <span class="tag settled">Settled</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

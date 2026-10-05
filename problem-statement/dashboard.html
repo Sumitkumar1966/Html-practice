@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitEasy | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        💳 SplitEasy
+    </a>
+
+    <nav>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="groups.html">Groups</a>
+        <a href="balances.html">Balances</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <div class="nav-right">
+        <span class="notification">🔔</span>
+
+        <a href="profile.html" class="user">
+            <span class="avatar">S</span>
+            Sumit
+        </a>
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+    <div class="page-header">
+        <div>
+            <span class="badge">OVERVIEW</span>
+            <h1>Good morning, Sumit 👋</h1>
+            <p>Here's your expense overview.</p>
+        </div>
+
+        <a href="add-expense.html" class="btn primary">
+            + Add Expense
+        </a>
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <span class="stat-icon orange-bg">₹</span>
+            <small>Total Spent</small>
+            <h2>₹8,450</h2>
+            <span class="positive">↑ 12% this month</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon red-bg">↗</span>
+            <small>You Owe</small>
+            <h2>₹1,250</h2>
+            <span class="negative">3 pending payments</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon green-bg">↙</span>
+            <small>You Get</small>
+            <h2>₹2,800</h2>
+            <span class="positive">4 people owe you</span>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon blue-bg">👥</span>
+            <small>Groups</small>
+            <h2>4</h2>
+            <span>Active groups</span>
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+        <section class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <h2>Recent Groups</h2>
+                    <p>Your active expense groups</p>
+                </div>
+
+                <a href="groups.html">View all →</a>
+            </div>
+
+
+            <div class="group-list">
+
+                <div class="mini-group">
+                    <div class="group-icon">🏖️</div>
+                    <div>
+                        <h3>Goa Trip</h3>
+                        <small>6 members</small>
+                    </div>
+                    <div class="group-money">
+                        <b>₹18,450</b>
+                        <span class="negative">You owe ₹450</span>
+                    </div>
+                </div>
+
+                <div class="mini-group">
+                    <div class="group-icon">🏠</div>
+                    <div>
+                        <h3>Flatmates</h3>
+                        <small>4 members</small>
+                    </div>
+                    <div class="group-money">
+                        <b>₹12,800</b>
+                        <span class="positive">You get ₹800</span>
+                    </div>
+                </div>
+
+                <div class="mini-group">
+                    <div class="group-icon">🎓</div>
+                    <div>
+                        <h3>College Friends</h3>
+                        <small>8 members</small>
+                    </div>
+                    <div class="group-money">
+                        <b>₹9,650</b>
+                        <span class="settled">Settled</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <h2>Your Balances</h2>
+                    <p>Things you need to settle</p>
+                </div>
+
+                <a href="balances.html">See all →</a>
+            </div>
+
+            <div class="balance-list">
+
+                <div class="balance-item">
+                    <span class="avatar blue">A</span>
+                    <div>
+                        <b>You owe Ayush</b>
+                        <small>Goa Trip</small>
+                    </div>
+                    <strong class="negative">₹450</strong>
+                    <button onclick="settle('Ayush',450)">Settle</button>
+                </div>
+
+                <div class="balance-item">
+                    <span class="avatar purple">D</span>
+                    <div>
+                        <b>Diya owes you</b>
+                        <small>Goa Trip</small>
+                    </div>
+                    <strong class="positive">₹800</strong>
+                    <button onclick="settle('Diya',800)">Settle</button>
+                </div>
+
+                <div class="balance-item">
+                    <span class="avatar green">A</span>
+                    <div>
+                        <b>You owe Abhishek</b>
+                        <small>Flatmates</small>
+                    </div>
+                    <strong class="negative">₹250</strong>
+                    <button onclick="settle('Abhishek',250)">Settle</button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <section class="panel">
+
+        <div class="panel-title">
+            <div>
+                <h2>Recent Expenses</h2>
+                <p>Your latest group expenses</p>
+            </div>
+
+            <a href="history.html">View history →</a>
+        </div>
+
+        <div class="expense-table">
+
+            <div class="expense-row expense-heading">
+                <span>Expense</span>
+                <span>Group</span>
+                <span>Paid By</span>
+                <span>Amount</span>
+                <span>Status</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🍽️ Dinner</span>
+                <span>Goa Trip</span>
+                <span>Sumit</span>
+                <b>₹2,400</b>
+                <span class="tag settled">Settled</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🏨 Hotel Booking</span>
+                <span>Goa Trip</span>
+                <span>Ayush</span>
+                <b>₹4,800</b>
+                <span class="tag pending">Pending</span>
+            </div>
+
+            <div class="expense-row">
+                <span>🚕 Cab</span>
+                <span>Goa Trip</span>
+                <span>Diya</span>
+                <b>₹650</b>
+                <span class="tag settled">Settled</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
